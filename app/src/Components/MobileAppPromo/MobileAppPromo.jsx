@@ -78,9 +78,18 @@ export default function MobileAppPromo() {
 
                             <Button variant="contained" 
                             onClick={() => {
-                                enqueueSnackbar("App link has been sent to your phone number", {
+
+                                if(number.length === 10){
+                                    enqueueSnackbar("App link has been sent to your mobile number", {
                                     variant: "success"
-                                })
+                                    })
+                                }else{
+                                    enqueueSnackbar("Mobile number should be 10 digits", {
+                                        variant: "error"
+                                    })
+                                }
+
+                                
                             }}
                             >Send SMS</Button>
 
