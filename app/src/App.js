@@ -1,13 +1,24 @@
-import { BrowserRouter, Routes, Route, Outlet} from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import './App.css';
 import Layout from "./Components/Layout/Layout";
 import Home from "./Pages/Home/Home";
 import Search from "./Pages/Search/Search";
 import Booking from "./Pages/Booking/Booking";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+
+// write theme
+const theme = createTheme({
+  palette: {
+    primary: {
+      main : "#2AA7FF"
+    },
+  }
+})
 
 function App() {
   return (
+    <ThemeProvider theme={theme}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />} >
@@ -17,6 +28,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
