@@ -8,9 +8,14 @@ import googlePlay from "../../Assets/mobileApp/google_play.png"
 import appleStore from "../../Assets/mobileApp/apple_store.png"
 import mobileImg from "../../Assets/mobileApp/mobilePic.png"
 import arrowVector from "../../Assets/mobileApp/Vector.png"
-
+import { useSnackbar } from "notistack";
+import { useState } from "react";
 
 export default function MobileAppPromo() {
+
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+    const [number, setNumber] = useState("");
+
 
     return (
         <div className={styles.container} >
@@ -56,6 +61,10 @@ export default function MobileAppPromo() {
                             <TextField
                                 placeholder="Enter phone number"
                                 type="number"
+                                value={number}
+                                onChange={(e) => {
+                                    setNumber(e.target.value);
+                                }}
                                 id="outlined-start-adornment"
                                 sx={{ m: 1, width: '25ch', background: "white" }}
                                 slotProps={{
@@ -67,7 +76,13 @@ export default function MobileAppPromo() {
                                 }}
                             />
 
-                            <Button variant="contained" >Send SMS</Button>
+                            <Button variant="contained" 
+                            onClick={() => {
+                                enqueueSnackbar("App link has been sent to your phone number", {
+                                    variant: "success"
+                                })
+                            }}
+                            >Send SMS</Button>
 
                         </Stack>
                     </Stack>

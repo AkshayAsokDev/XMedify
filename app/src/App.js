@@ -5,7 +5,7 @@ import Home from "./Pages/Home/Home";
 import Search from "./Pages/Search/Search";
 import Booking from "./Pages/Booking/Booking";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { SnackbarProvider } from 'notistack'
 
 // write theme
 const theme = createTheme({
@@ -19,6 +19,9 @@ const theme = createTheme({
 
 function App() {
   return (
+    <SnackbarProvider
+    maxSnack={1}
+    >
     <ThemeProvider theme={theme}>
     <BrowserRouter>
       <Routes>
@@ -30,6 +33,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     </ThemeProvider>
+    </SnackbarProvider>
   );
 }
 
