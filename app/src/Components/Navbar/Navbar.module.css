@@ -1,0 +1,21 @@
+.nav {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkStyle {
+    text-decoration: none;
+    color: #102851;
+}
+
+.logoDiv {
+    width: 7%;
+    padding: 10px;
+}
+
+.logoDiv img {
+    width: 100%;
+    height: 100%;
+}
