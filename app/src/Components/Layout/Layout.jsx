@@ -14,6 +14,12 @@ export default function Layout () {
     const [cityData, setCityData] = useState([]);
     const [selectedCity, setSelectedCity] = useState("");
     const [medicalCenters, setMedicalCenters] = useState([]);
+    const [bookedDetails, setBookedDetails] = useState(() => {
+
+        const temp = localStorage.getItem('bookings');
+        // console.log("data book >> ", temp ? temp : []);
+        return temp ? JSON.parse(temp) : []
+    });
 
     const outletData = {
         stateData,
@@ -23,6 +29,8 @@ export default function Layout () {
         selectedCity,
         setSelectedCity,
         medicalCenters,
+        setBookedDetails,
+        bookedDetails
     }
 
 
@@ -74,6 +82,13 @@ export default function Layout () {
         }
     }, [selectedCity, selectedState])
 
+
+    //set booked details to local storage on change in booked details
+    useEffect(() => {
+
+        localStorage.setItem("bookings", JSON.stringify(bookedDetails))
+
+    }, [bookedDetails])
 
 
     return (
