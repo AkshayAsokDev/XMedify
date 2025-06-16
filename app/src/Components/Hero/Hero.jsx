@@ -7,7 +7,10 @@ import Button from "@mui/material/Button";
 import Searchbar from "../Searchbar/Searchbar";
 import DisplayCard from "../DisplayCard/DisplayCard";
 
-export default function Hero() {
+export default function Hero({stateData, selectedState, setSelectedState, cityData, selectedCity, setSelectedCity}) {
+
+    // console.log("state data in hero>> ", stateData)
+    // console.log("city data in hero>> ", cityData)
 
     return (
         <div className={styles.container}>
@@ -73,7 +76,9 @@ export default function Hero() {
                     border: "1px solid gray",
                     borderRadius: "10px"
                 }}>
-                    <Searchbar home />
+                    <Searchbar home stateData={stateData} selectedState={selectedState} setSelectedState={setSelectedState} 
+                        cityData={cityData} selectedCity={selectedCity} setSelectedCity={setSelectedCity}
+                    />
 
                     <Typography
                     sx={{
