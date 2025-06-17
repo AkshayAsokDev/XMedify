@@ -31,7 +31,11 @@ export default function Search() {
 
             <div className={styles.searchResult}>
 
-                <Stack spacing={3}>
+                <Stack spacing={3}
+                sx={{
+                    marginBottom: "20px"
+                }}
+                >
 
                     <h1
                     className={styles.heading}
