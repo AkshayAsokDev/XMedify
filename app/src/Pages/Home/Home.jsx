@@ -8,7 +8,7 @@ import { useOutletContext } from "react-router-dom"
 export default function Home() {
 
     const {stateData, selectedState, setSelectedState,
-        cityData, selectedCity, setSelectedCity
+        cityData, selectedCity, setSelectedCity, isMobile
     } = useOutletContext();
 
     // console.log("state within Home >>", stateData)
@@ -19,9 +19,9 @@ export default function Home() {
             <Hero stateData={stateData} selectedState={selectedState} setSelectedState={setSelectedState} 
                 cityData={cityData} selectedCity={selectedCity} setSelectedCity={setSelectedCity}
             />
-            <Specialization />
-            <LatestNews />
-            <Faq />
+            <Specialization isMobile={isMobile} />
+            <LatestNews isMobile={isMobile} />
+            <Faq isMobile={isMobile} />
         </div>
     )
 }

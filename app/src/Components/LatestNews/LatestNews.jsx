@@ -12,14 +12,14 @@ import stsIcon1 from "../../Assets/medical/sts1.png"
 import stsIcon2 from "../../Assets/medical/sts2.png"
 import Grid from "@mui/material/Grid";
 
-export default function LatestNews() {
+export default function LatestNews({isMobile}) {
 
     return (
         <div className={styles.containerMain}>
             
             {/* Latest News */}
             
-            <div className={styles.container1} >
+            <div className={[styles.container1, ]} >
                 
                 <Typography color="primary" >Blog & News</Typography>
                 <Typography variant="h4" color="#1B3C74" 
@@ -28,7 +28,7 @@ export default function LatestNews() {
                 }}
                 >Read Our Latest News</Typography>
 
-                <Stack direction="row" spacing={2}
+                <Stack direction={isMobile ? "column" : "row"} spacing={2}
                 sx={{
                     marginTop: "25px"
                 }}
@@ -154,11 +154,14 @@ export default function LatestNews() {
                 <Stack direction="row" spacing={2}
                 sx={{
                     width: "100%",
-                    justifyContent: "space-evenly"
+                    justifyContent: "space-evenly",
+                    flexDirection: "row",
                 }}
+                className={[isMobile && styles.mob1]}
                 >
 
-                    <div className={styles.status1}>
+                    <div className={[styles.status1, isMobile && styles.statusMob]}
+                    >
 
                         <Typography color="primary" >CARING FOR THE HEALTH OF YOU AND YOUR FAMILY.</Typography>
                         <Typography variant="h4" color="#1B3C74" 
@@ -177,7 +180,7 @@ export default function LatestNews() {
 
                     </div>
 
-                    <div className={styles.status2}>
+                    <div className={[styles.status2, isMobile && styles.status2Mob]}>
                         
                         <Grid container spacing={1}>
 

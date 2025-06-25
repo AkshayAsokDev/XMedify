@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 import MobileAppPromo from "../MobileAppPromo/MobileAppPromo";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const endpoint = 'https://meddata-backend.onrender.com/states';
 
@@ -21,6 +22,8 @@ export default function Layout () {
         return temp ? JSON.parse(temp) : []
     });
 
+    const isMobile = useMediaQuery("(max-width:1000px)");
+
     const outletData = {
         stateData,
         selectedState,
@@ -30,7 +33,8 @@ export default function Layout () {
         setSelectedCity,
         medicalCenters,
         setBookedDetails,
-        bookedDetails
+        bookedDetails,
+        isMobile
     }
 
 

@@ -21,7 +21,8 @@ export default function Hero({stateData, selectedState, setSelectedState, cityDa
             
             <Stack direction="row" spacing={2}
             style={{
-                position: "relative"
+                position: "relative",
+                justifyContent: "space-evenly"
             }}
             >
                 
