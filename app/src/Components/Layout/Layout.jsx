@@ -102,8 +102,8 @@ export default function Layout () {
             {/* Nested routes here */}
             <Outlet context={outletData} />
 
-            <MobileAppPromo />
-            <Footer />
+            <MobileAppPromo isMobile={isMobile} />
+            <Footer isMobile={isMobile} />
 
         </div>
     )

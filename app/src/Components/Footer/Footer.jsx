@@ -10,11 +10,11 @@ import pinterestIcon from "../../Assets/Footer/pinterest_icon.png"
 import arrowBullet from "../../Assets/Footer/bullet.png"
 
 
-export default function Footer() {
+export default function Footer({isMobile}) {
 
 
     return (
-        <div className={styles.container} >
+        <div className={isMobile ? styles.containerMob : styles.container} >
 
             <Stack direction="column" spacing={2}
             sx={{
@@ -24,15 +24,18 @@ export default function Footer() {
             }}
             >
 
-                <Stack direction="row" spacing={2} 
+                <Stack direction={isMobile ? "column" : 'row'} spacing={2} 
                 style={{
-                    height : "200px",
-                    justifyContent: "space-evenly"
+                    height : isMobile ? "fit-content" : "200px",
+                    justifyContent: "space-evenly",
+                    alignItems: isMobile && "center",
+                    gap: isMobile && "20px"
                 }}
                 >
                     <Stack 
                     sx={{
                         justifyContent: "space-between",
+                        height: "100px"
                     }}
                     >
                         <Stack direction="row" spacing={2}>

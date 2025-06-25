@@ -16,3 +16,14 @@
 .line {
     width: 100%;
 }
+
+.containerMob {
+    padding: 25px;
+    background-color: #1B3C74;
+    height: auto;
+
+}
+
+.contentMob {
+    height: fit-content;
+}
