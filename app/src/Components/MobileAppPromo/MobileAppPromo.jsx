@@ -30,7 +30,8 @@ export default function MobileAppPromo() {
 
                 <Stack sx={{
                     height: "100%",
-                    justifyContent: "space-evenly"
+                    justifyContent: "space-evenly",
+                    gap: "10px"
                 }}>
                     <div>
                         <Typography
