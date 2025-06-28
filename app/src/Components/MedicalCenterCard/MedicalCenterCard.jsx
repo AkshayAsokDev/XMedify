@@ -6,6 +6,7 @@ import Button from "@mui/material/Button"
 import { useState } from "react"
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import BasicTabs from "../BookingTab/BookingTab"
+import { useOutletContext } from "react-router-dom"
 
 
 const dummyData = {
@@ -70,7 +71,7 @@ export default function MedicalCenterCard({center, setBookedDetails}) {
     const [likeCount, setLikeCount] = useState(5)
     const [bookingDisplay, setBookingDisplay] = useState(false);
 
-    
+    const { isMobile } = useOutletContext();
 
     return (
         <div className={styles.container}>
@@ -113,7 +114,7 @@ export default function MedicalCenterCard({center, setBookedDetails}) {
                         >{center["Hospital Name"]}</p>
                         
 
-                        <Stack direction="row" spacing={2}>
+                        <Stack direction={isMobile ? "column" : "row"} spacing={2}>
 
                             <div 
                             style={{
