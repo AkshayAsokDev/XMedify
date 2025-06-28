@@ -10,8 +10,12 @@ import Stack from "@mui/material/Stack";
 import WifiCalling3Icon from '@mui/icons-material/WifiCalling3';
 import sqImg1 from "../../Assets/medical/sq-1.png"
 import sqImg2 from "../../Assets/medical/sq-2.png"
+import { useOutletContext } from "react-router-dom";
 
 export default function Specialization() {
+
+    const { isMobile
+    } = useOutletContext();
 
     return (
         <div>
@@ -132,8 +136,10 @@ export default function Specialization() {
                 <Stack direction="row" spacing={2}
                 sx={{
                     width: "100%",
-                    justifyContent: "space-evenly"
+                    justifyContent: "space-evenly",
+                    height: "fit-content"
                 }}
+                className={isMobile && styles.ptMob}
                 >
 
                     <div className={styles.boxStyle}>
