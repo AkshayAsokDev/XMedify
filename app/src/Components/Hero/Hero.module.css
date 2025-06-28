@@ -4,11 +4,11 @@
 }
 
 .DoctorBg {
-    width: 25%;
+    width: 35%;
 
-    /* position: absolute;
-    right: 25%;
-    top: 30%; */
+    position: absolute;
+    bottom: 0;
+    right: 10%;
 }
 
 .DoctorBg img {

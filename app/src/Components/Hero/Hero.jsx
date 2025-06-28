@@ -22,13 +22,14 @@ export default function Hero({stateData, selectedState, setSelectedState, cityDa
             <Stack direction="row" spacing={2}
             style={{
                 position: "relative",
-                justifyContent: "space-evenly"
+                justifyContent: "flex-start"
             }}
             >
                 
                 <div style={{
                     paddingLeft: "5%",
                     paddingTop: "5%",
+                    paddingBottom: "5%"
                 }} >
 
                     <div className={styles.heroText}>
@@ -79,6 +80,7 @@ export default function Hero({stateData, selectedState, setSelectedState, cityDa
 
             <div style={{
                 padding: "5%",
+                paddingTop: 0,
                 
             }}
             className={styles.midContainer}
