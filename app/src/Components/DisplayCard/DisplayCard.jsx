@@ -16,7 +16,9 @@ export default function DisplayCard() {
             <Stack direction="row" spacing={2}
             sx={{
                 padding: "10px",
-                justifyContent: "space-evenly"
+                justifyContent: "space-evenly",
+                flexWrap: "wrap",
+                gap: "20px"
             }}
             >
                 <div className={styles.card}>

@@ -7,10 +7,12 @@ import styles from "./Searchbar.module.css"
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-
+import { useOutletContext } from 'react-router-dom';
 
 export default function Searchbar({home=false, stateData, selectedState, setSelectedState, cityData, selectedCity, setSelectedCity}) {
 
+    const { isMobile } = useOutletContext();
+    
     // console.log("state data in search>> ", stateData)
     let navigate = useNavigate();
 
@@ -48,13 +50,14 @@ export default function Searchbar({home=false, stateData, selectedState, setSele
                         labelId="state-select-label"
                         id="state-select"
                         label="State"
-                        sx={{width: "200px"}}
+                        sx={{width: "220px"}}
                         name='state'
                         value={selectedState}
                         onChange={(e) => {
                             // console.log("state value change >>", e.target.value)
                             setSelectedState(e.target.value)
                         }}
+                        className={isMobile && styles.selectStyle}
                         >
                             {
                                 stateData.map((state, index) => {
@@ -72,13 +75,14 @@ export default function Searchbar({home=false, stateData, selectedState, setSele
                         labelId="city-select-label"
                         id="city-select"
                         label="city"
-                        sx={{width: "200px"}}
+                        sx={{width: "220px"}}
                         name='city'
                         value={selectedCity}
                         onChange={(e) => {
                             // console.log("city value change >>", e.target.value)
                             setSelectedCity(e.target.value)
                         }}
+                        className={isMobile && styles.selectStyle}
                         >
                             
                             {
