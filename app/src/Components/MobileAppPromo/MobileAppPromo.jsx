@@ -99,12 +99,28 @@ export default function MobileAppPromo() {
                     
                     <Stack direction="row" spacing={2}>
                         
-                        <div>
-                            <img src={googlePlay} alt="google-play-icon" />
+                        <div
+                        style={{
+                            width: "50%"
+                        }}
+                        >
+                            <img src={googlePlay} alt="google-play-icon" 
+                            style={{
+                                width: "100%"
+                            }}
+                            />
                         </div>
 
-                        <div>
-                            <img src={appleStore} alt="apple-store-icon" />
+                        <div
+                        style={{
+                            width: "50%"
+                        }}
+                        >
+                            <img src={appleStore} alt="apple-store-icon" 
+                            style={{
+                                width: "100%"
+                            }}
+                            />
                         </div>
                     </Stack>
 
