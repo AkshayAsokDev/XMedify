@@ -5,10 +5,12 @@ import DocPic from "../../Assets/faq/docPic.png"
 import SmileyIcon from "../../Assets/faq/emoji.png"
 import PresentIcon from "../../Assets/faq/present.png"
 import AddIcon from '@mui/icons-material/Add';
-
+import { useOutletContext } from "react-router-dom"
 
 export default function Faq() {
 
+    const { isMobile
+    } = useOutletContext();
 
     return (
         <div
@@ -35,6 +37,7 @@ export default function Faq() {
                     justifyContent: "space-evenly",
                     alignItems: "center"
                 }}
+                className={isMobile && styles.mobStack}
                 >
 
                     <div className={styles.container1}>
@@ -68,7 +71,11 @@ export default function Faq() {
 
                     </div>
 
-                    <Stack direction="row" spacing={3}>
+                    <Stack direction="row" spacing={3}
+                    sx={{
+                        padding: "10px"
+                    }}
+                    >
 
                         <Stack spacing={2}>
 
