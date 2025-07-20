@@ -17,3 +17,5 @@ Implemented
 
 To be implemented
 *   Custom design for mobile phones (Updated)
+
+Deployed Link: https://x-medify-alpha.vercel.app/
